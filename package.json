@@ -10,9 +10,9 @@
     "method-override": "latest",
     "body-parser": "latest",
     "file-stream-rotator": "latest",
-    "mongoose": "latest",
     "serve-favicon": "latest",
     "twig": "latest",
-    "log4js": "latest"
+    "log4js": "latest",
+    "mysql": "latest"
   }
 }
