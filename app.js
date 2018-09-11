@@ -47,6 +47,10 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
+app.get('/', function(req, res){
+  res.render( 'index.twig' );
+});
+
 /**
  * Starting server
  **/
