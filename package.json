@@ -1,0 +1,18 @@
+{
+  "name"        : "Internal-Project",
+  "version"     : "0.1.0",
+  "repository"  : "https://github.com/JasterTDC/nodejs-ticketing.git",
+  "author"      : "Ismael Moral <jastertdc@gmail.com>",
+  "dependencies" : {
+    "morgan" :                    "latest",
+    "express" :                   "latest",
+    "cookie-parser" :             "latest",
+    "method-override":            "latest",
+    "body-parser" :               "latest",
+    "file-stream-rotator" :       "latest",
+    "mongoose" :                  "latest",
+    "serve-favicon" :             "latest",
+    "twig" :                      "latest",
+    "log4js" :                    "latest"
+  }
+}
