@@ -47,29 +47,6 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-app.get( '/login/:name/', function(req, res){
-  var user  = {},
-      str   = 'Bye intruder';
-
-  connection.query('SELECT * FROM be_user WHERE name=?', req.params.name, function(error, result, fields){
-    if ( error ) throw error;
-
-    console.log( result[0] );
-
-    if ( result.length > 0 ){
-      str = 'Hello ' + result[0].name + ' your password is ' + result[0].password;
-    }
-
-    res.send( str );
-  });
-});
-
-// connection.query('SELECT * FROM be_user WHERE name="admin" AND password="admin"', function(error, result, fields){
-//   if ( error ) throw error;
-//
-//   console.log( result );
-// });
-
 /**
  * Starting server
  **/
