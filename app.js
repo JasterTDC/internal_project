@@ -51,6 +51,13 @@ app.get('/', function(req, res){
   res.render( 'index.twig' );
 });
 
+app.post( '/login/', function(req, res){
+  console.log( req.body.username );
+
+  res.setHeader( 'Content-Type', 'application/json' );
+  res.send(JSON.stringify({ b : 'pepe' }));
+});
+
 /**
  * Starting server
  **/
