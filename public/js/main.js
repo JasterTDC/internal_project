@@ -10,7 +10,8 @@
 
   var
   _onLoginRequest = function(){
-    if ( this.readyState == 4 && this.status == 200 ){
+    console.log( this );
+    if ( this.readyState == 4 ){
       console.log( JSON.parse(this.responseText) );
     }
   },

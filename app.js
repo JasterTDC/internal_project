@@ -47,15 +47,33 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
+var User = require( './model/user.js' ),
+    user = new User( connection );
+
 app.get('/', function(req, res){
   res.render( 'index.twig' );
 });
 
 app.post( '/login/', function(req, res){
-  console.log( req.body.username );
+  user.on('success', function(result){
+    console.log( 'success' );
 
-  res.setHeader( 'Content-Type', 'application/json' );
-  res.send(JSON.stringify({ b : 'pepe' }));
+    res.setHeader( 'Content-Type', 'application/json' );
+    res.status(200).end( JSON.stringify(result) );
+  });
+  user.on('failure', function(reason){
+    console.log( 'failure' );
+
+    res.setHeader( 'Content-Type', 'application/json' );
+    res.status(400).end( JSON.stringify(reason) );
+  });
+  user.on('error', function(error){
+    console.log( 'error' );
+
+    res.setHeader( 'Content-Type', 'application/json' );
+    res.status(500).end( JSON.stringify({ error: 'Internal error' }) );
+  });
+  user.login( req.body.username, req.body.password );
 });
 
 /**
