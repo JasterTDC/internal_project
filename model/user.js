@@ -21,7 +21,12 @@ module.exports = class User extends EventEmitter{
         return true;
       }
 
-      that.emit( 'success', result[0] );
+      if ( result.length >= 1 ){
+        that.emit( 'success', result[0] );
+
+        return true;
+      }
+
     });
   }
 }

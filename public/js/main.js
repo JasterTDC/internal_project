@@ -11,8 +11,9 @@
   var
   _onLoginRequest = function(){
     console.log( this );
+
     if ( this.readyState == 4 ){
-      console.log( JSON.parse(this.responseText) );
+      JSON.parse(this.responseText)
     }
   },
   _onLoginSubmit = function(evt){
